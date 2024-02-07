@@ -34,8 +34,17 @@ ul {
 }
 
 .btn {
-  width: 230px;
+  width: 330px;
   height: 50px;
   font-weight: bold;
   font-size: 1rem;
+  background-color: #a50034;
+  color: white;
+  border: none;
+}
+
+.btn:hover {
+  cursor: pointer;
+  background-color: #930020;
+  color: white;
 }

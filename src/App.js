@@ -130,7 +130,7 @@ function App() {
                         </p>
 
                         <p style={{ display: "flex", alignItems: "center" }}>
-                            부 서 :
+                            부서명 :
                             <input
                                 type="text"
                                 placeholder="데이터플랫폼Project"
@@ -161,10 +161,7 @@ function App() {
                 </div>
             </div>
 
-            <button
-                className="btn"
-                onClick={downloadPdf}
-                sytle={{ width: "300px;" }}>
+            <button className="btn" onClick={downloadPdf}>
                 개인정보 취급자 서약서 다운로드
             </button>
         </div>
