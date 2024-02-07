@@ -133,7 +133,7 @@ function App() {
                             부서명 :
                             <input
                                 type="text"
-                                placeholder="데이터플랫폼Project"
+                                placeholder="예시) 데이터플랫폼Project"
                                 value={department}
                                 size="30"
                                 style={{ marginLeft: "5px", height: "30px" }}
@@ -144,7 +144,7 @@ function App() {
                             서약인 :
                             <input
                                 type="text"
-                                placeholder="김엘지"
+                                placeholder="예시) 김엘지"
                                 value={name}
                                 size="10"
                                 style={{
