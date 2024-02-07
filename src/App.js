@@ -136,7 +136,7 @@ function App() {
                                 placeholder="데이터플랫폼Project"
                                 value={department}
                                 size="30"
-                                style={{ marginLeft: "5px" }}
+                                style={{ marginLeft: "5px", height: "30px" }}
                                 onChange={e => setDepartment(e.target.value)}
                             />
                         </p>
@@ -147,7 +147,10 @@ function App() {
                                 placeholder="김엘지"
                                 value={name}
                                 size="10"
-                                style={{ marginLeft: "5px" }}
+                                style={{
+                                    marginLeft: "5px",
+                                    height: "30px",
+                                }}
                                 onChange={e => setName(e.target.value)}
                             />
                         </p>
