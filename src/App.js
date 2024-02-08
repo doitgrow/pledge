@@ -128,23 +128,41 @@ function App() {
                             손해배상 책임을 포함한 민/형사상의 모든 책임을 질
                             것을 서약합니다.
                         </p>
-
-                        <p style={{ display: "flex", alignItems: "center" }}>
+                        <p
+                            style={{
+                                display: "flex",
+                                alignItems: "center",
+                                justifyContent: "flex-end",
+                            }}>
+                            {todayDate}
+                        </p>
+                        <p
+                            style={{
+                                display: "flex",
+                                alignItems: "center",
+                                justifyContent: "flex-end",
+                            }}>
                             부서명 :
                             <input
                                 type="text"
-                                placeholder="예시) 데이터플랫폼Project"
+                                placeholder=" 예시) 데이터플랫폼Project"
                                 value={department}
-                                size="30"
+                                size="20-"
                                 style={{ marginLeft: "5px", height: "30px" }}
                                 onChange={e => setDepartment(e.target.value)}
                             />
                         </p>
-                        <p style={{ display: "flex", alignItems: "center" }}>
+
+                        <p
+                            style={{
+                                display: "flex",
+                                alignItems: "center",
+                                justifyContent: "flex-end",
+                            }}>
                             서약인 :
                             <input
                                 type="text"
-                                placeholder="예시) 김엘지"
+                                placeholder=" 예시) 김엘지"
                                 value={name}
                                 size="10"
                                 style={{
@@ -153,9 +171,6 @@ function App() {
                                 }}
                                 onChange={e => setName(e.target.value)}
                             />
-                        </p>
-                        <p style={{ display: "flex", alignItems: "center" }}>
-                            날 짜 : {todayDate}
                         </p>
                     </div>
                 </div>
