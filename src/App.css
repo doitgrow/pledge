@@ -48,3 +48,8 @@ ul {
   background-color: #930020;
   color: white;
 }
+
+button:disabled,
+button:disabled:hover {
+  background-color: rgba(200, 200, 200, .7);
+}

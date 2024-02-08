@@ -176,7 +176,10 @@ function App() {
                 </div>
             </div>
 
-            <button className="btn" onClick={downloadPdf}>
+            <button
+                className="btn"
+                onClick={downloadPdf}
+                disabled={!name || !department}>
                 개인정보 취급자 서약서 다운로드
             </button>
         </div>
