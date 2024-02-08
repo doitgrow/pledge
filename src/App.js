@@ -6,6 +6,7 @@ import { useState } from "react";
 function App() {
     const [name, setName] = useState("");
     const [department, setDepartment] = useState("");
+    const [epId, setEpId] = useState("");
 
     const formatDate = date => {
         const year = date.getFullYear();
@@ -159,12 +160,33 @@ function App() {
                                 alignItems: "center",
                                 justifyContent: "flex-end",
                             }}>
+                            EP 계정 :
+                            <input
+                                type="text"
+                                placeholder=" 예시) gildong.hong"
+                                value={epId}
+                                size="18"
+                                style={{
+                                    marginLeft: "5px",
+                                    height: "30px",
+                                }}
+                                onChange={e => setEpId(e.target.value)}
+                            />
+                        </p>
+
+                        <p
+                            style={{
+                                display: "flex",
+                                alignItems: "center",
+                                justifyContent: "flex-end",
+                                marginBottom: "-10px",
+                            }}>
                             서약인 :
                             <input
                                 type="text"
                                 placeholder=" 예시) 김엘지"
                                 value={name}
-                                size="10"
+                                size="15"
                                 style={{
                                     marginLeft: "5px",
                                     height: "30px",
@@ -179,7 +201,7 @@ function App() {
             <button
                 className="btn"
                 onClick={downloadPdf}
-                disabled={!name || !department}>
+                disabled={!name || !department || !epId}>
                 개인정보 취급자 서약서 다운로드
             </button>
         </div>
