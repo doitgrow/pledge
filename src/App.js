@@ -7,6 +7,7 @@ function App() {
     const [name, setName] = useState("");
     const [department, setDepartment] = useState("");
     const [epId, setEpId] = useState("");
+    const [isChecked, setIsChecked] = useState(false);
 
     const formatDate = date => {
         const year = date.getFullYear();
@@ -46,7 +47,7 @@ function App() {
                     <div className="main">
                         <p
                             style={{
-                                marginBottom: "2rem",
+                                marginBottom: "1rem",
                             }}>
                             본인은 귀사(이하 '회사'라 함)에 업무 목적상
                             고객(이하 '정보주체'라 함)의 개인정보를
@@ -56,7 +57,7 @@ function App() {
                         <p
                             style={{
                                 paddingLeft: "1rem",
-                                marginBottom: "2rem",
+                                marginBottom: "1.5rem",
                             }}>
                             1. 본인은 회사의 회사 업무 처리를 제공을 목적으로
                             개인정보에 대한 접근권한을 가지고 개인정보를
@@ -68,7 +69,7 @@ function App() {
                         <p
                             style={{
                                 paddingLeft: "1rem",
-                                marginBottom: "2rem",
+                                marginBottom: "1.5rem",
                             }}>
                             2. 본인은 업무 수행을 위해 필요한 최소한의
                             개인정보만을 처리할 것이며, 본인에게 부여된 권한과
@@ -79,7 +80,7 @@ function App() {
                         <p
                             style={{
                                 paddingLeft: "1rem",
-                                marginBottom: "2rem",
+                                marginBottom: "1.5rem",
                             }}>
                             3. 본인은 업무 수행을 위해 부득이하게 개인정보를
                             처리 위탁을 주거나 제3자에게 제공할 경우 전사
@@ -92,7 +93,7 @@ function App() {
                         <p
                             style={{
                                 paddingLeft: "1rem",
-                                marginBottom: "2rem",
+                                marginBottom: "1.5rem",
                             }}>
                             4. 본인은 개인정보에 대해 관련 법에서 정의한
                             정보주체의 권리를 최대한 보장하고 고객의 요구나
@@ -102,7 +103,7 @@ function App() {
                         <p
                             style={{
                                 paddingLeft: "1rem",
-                                marginBottom: "2rem",
+                                marginBottom: "1.5rem",
                             }}>
                             5. 본인은 회사에 근무 재직하는 동안 취득하거나
                             직무상 알게 되는 개인정보를 침해, 유출 또는
@@ -113,7 +114,7 @@ function App() {
                         <p
                             style={{
                                 paddingLeft: "1rem",
-                                marginBottom: "2rem",
+                                marginBottom: "1.5rem",
                             }}>
                             6. 본인은 퇴직 후에도 위의 사항을 준수할 것을
                             약속합니다.
@@ -121,7 +122,7 @@ function App() {
                         <p
                             style={{
                                 paddingLeft: "1rem",
-                                marginBottom: "2rem",
+                                marginBottom: "1.5rem",
                             }}>
                             7. 본인이 본 서약을 위반하였을 경우, 본인은 사규에
                             따른 징계, 개인정보보호법, 정보통신망 이용촉진에
@@ -179,7 +180,6 @@ function App() {
                                 display: "flex",
                                 alignItems: "center",
                                 justifyContent: "flex-end",
-                                marginBottom: "-10px",
                             }}>
                             서약인 :
                             <input
@@ -194,6 +194,25 @@ function App() {
                                 onChange={e => setName(e.target.value)}
                             />
                         </p>
+                        <p
+                            style={{
+                                display: "flex",
+                                alignItems: "center",
+                                justifyContent: "flex-end",
+                                marginBottom: "-10px",
+                            }}>
+                            LG전자 주식회사 귀중
+                            <input
+                                type="checkbox"
+                                value={name}
+                                size="15"
+                                style={{
+                                    marginLeft: "15px",
+                                    height: "30px",
+                                }}
+                                onClick={e => setIsChecked(e.target.checked)}
+                            />
+                        </p>
                     </div>
                 </div>
             </div>
@@ -201,7 +220,7 @@ function App() {
             <button
                 className="btn"
                 onClick={downloadPdf}
-                disabled={!name || !department || !epId}>
+                disabled={!name || !department || !epId || !isChecked}>
                 개인정보 취급자 서약서 다운로드
             </button>
         </div>
