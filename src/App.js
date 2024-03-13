@@ -17,6 +17,14 @@ function App() {
         return `${year}년 ${month}월 ${day}일`;
     };
 
+    const formatDate2 = date => {
+        const year = date.getFullYear();
+        const month = `${date.getMonth() + 1}`;
+        const day = `${date.getDate()}`;
+
+        return `${year}${month}${day}`;
+    };
+
     const todayDate = formatDate(new Date());
     console.log(todayDate);
 
@@ -33,9 +41,12 @@ function App() {
         const pdfWidth = pdf.internal.pageSize.getWidth();
         const pdfHeight =
             (imgProperties.height * pdfWidth) / imgProperties.width;
-
         pdf.addImage(data, "PNG", 0, 0, pdfWidth, pdfHeight);
-        pdf.save("개인정보 취급자 서약서.pdf");
+
+        const todayDate2 = formatDate2(new Date());
+        pdf.save(
+            `개인정보 취급자 서약서_${todayDate2}_${department.trim()}_${name.trim()}_${epId.trim()}.pdf`,
+        );
     };
     return (
         <div className="wrapper">
