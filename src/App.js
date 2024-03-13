@@ -12,6 +12,7 @@ function App() {
     const formatDate = date => {
         const year = date.getFullYear();
         const month = `${date.getMonth() + 1}`;
+        console.log(date.getMonth());
         const day = `${date.getDate()}`;
 
         return `${year}년 ${month}월 ${day}일`;
@@ -22,7 +23,17 @@ function App() {
         const month = `${date.getMonth() + 1}`;
         const day = `${date.getDate()}`;
 
-        return `${year}${month}${day}`;
+        var todayString = year;
+        if (month < 10) {
+            todayString += "0";
+        }
+        todayString += month;
+        if (day < 10) {
+            todayString += "0";
+        }
+        todayString += day;
+
+        return todayString;
     };
 
     const todayDate = formatDate(new Date());
